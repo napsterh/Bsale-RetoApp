@@ -1,4 +1,9 @@
 .card-info {
     background-image: url('https://openweathermap.org/themes/openweathermap/assets/img/new-history-forecast-bulk.png');
-    height: 430px;
+    height: 500px;
+    color: #000000;
+}
+
+.container {
+    
 }

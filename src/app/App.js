@@ -25,10 +25,16 @@ class App extends Component {
         if(valorCiudad){
             const API_OPENWEATHER =  `http://api.openweathermap.org/data/2.5/weather?q=${valorCiudad}&appid=${OPENWEATHER_KEY}&units=metric`;
 
-        const response = await fetch(API_OPENWEATHER);
-        const data = await response.json();
-        //console.log(this.state);
+            const response = await fetch(API_OPENWEATHER);
+            const data = await response.json();
+            //console.log(this.state);
 
+            const date = new Date();
+            let mes = date.getMonth();
+            let dia = date.getDay();
+            let hora = date.getHours();
+            let minuto = date.getMinutes();
+            let anio = date.getFullYear();
 
         this.setState({
             temperatura: data.main.temp,
@@ -37,11 +43,13 @@ class App extends Component {
             vel_viento: data.wind.speed,
             ciudad: data.name,
             pais: data.sys.country,
-            fecha: Date(),
+            fecha: +dia+"/"+mes+"/"+anio+"-"+hora+":"+ minuto,
+            error: null
         });
-
         } else {
-            this.setState({error: 'Ingrese una ciudad válida'})
+            this.setState({
+                error: 'Ingrese una ciudad válida'
+            });
         }
 
      }
@@ -50,7 +58,7 @@ class App extends Component {
         return (
             <div className="container p-4">
                 <div className="row">
-                    <div className="col-md-8 mx-auto">
+                    <div className="col-md-6 mx-auto">
                         <FormClima obtenerClima={this.obtenerClima}/>
                         <InfoClima temperatura {...this.state}/>
                     </div>
