@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import InfoClima from '../components/InfoClima';
 import FormClima from '../components/FormClima';
+
 import { OPENWEATHER_KEY } from './keys';
 
 class App extends Component {
@@ -9,7 +11,7 @@ class App extends Component {
         temperatura: '',
         descripcion: '',
         humedad: '',
-        vel_viento: '',
+        vel_viento: 0,
         ciudad: '',
         pais: '',
         error: null,
@@ -27,23 +29,24 @@ class App extends Component {
 
             const response = await fetch(API_OPENWEATHER);
             const data = await response.json();
-            //console.log(this.state);
 
             const date = new Date();
-            let mes = date.getMonth();
-            let dia = date.getDay();
+            console.log(date);
+            let mes = date.getMonth()+1;
+            let dia = date.getDate();
             let hora = date.getHours();
             let minuto = date.getMinutes();
             let anio = date.getFullYear();
 
         this.setState({
             temperatura: data.main.temp,
+            sensacion_term: data.main.feels_like,
+            temperatura_min: data.main.temp_min,
             descripcion: data.weather[0].description,
             humedad: data.main.humidity,
             vel_viento: data.wind.speed,
             ciudad: data.name,
             pais: data.sys.country,
-            fecha: +dia+"/"+mes+"/"+anio+"-"+hora+":"+ minuto,
             error: null
         });
         } else {
@@ -51,7 +54,6 @@ class App extends Component {
                 error: 'Ingrese una ciudad válida'
             });
         }
-
      }
 
     render() {
