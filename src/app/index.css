@@ -24,27 +24,25 @@ body{
     
 }
 
-.fecha {
+.sensacion_term {
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 
-.hora{
+.temperatura_min{
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 
 .vel-viento{
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 
-.vel-viento h3 {
-    margin-left: 50px;
-}
+
 
 .descripcion{
     color: #ffffff;
@@ -71,7 +69,7 @@ body{
 
 .humedad {
     color: #ffffff;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
 }
 

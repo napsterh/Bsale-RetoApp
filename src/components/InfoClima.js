@@ -26,10 +26,10 @@ const InfoClima = props => {
                         <div className="card card-body card-info animated fadeInUp">
                             <div className="container">
                                 <div className="row justify-content-between">
-                                    <div className="fecha col-6" data-toggle="tooltip" data-placement="top" title="Sensación térmica">
+                                    <div className="sensacion_term col-6" data-toggle="tooltip" data-placement="top" title="Sensación térmica">
                                         <h2><i className="fas fa-temperature-high"></i> {props.sensacion_term}</h2>
                                     </div>
-                                    <div className="hora col-4" data-toggle="tooltip" data-placement="top" title="Temperatura mínima">
+                                    <div className="temperatura_min col-4" data-toggle="tooltip" data-placement="top" title="Temperatura mínima">
                                         <h2><i className="fas fa-arrow-down fa-1x"></i> {props.temperatura_min}</h2>
                                     </div>
                                 </div>

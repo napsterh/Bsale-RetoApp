@@ -1,1 +1,96 @@
+body{
+    background-image: url('https://miro.medium.com/max/3840/1*Q-xU4pvFBJITmKq3HtIupA.jpeg');
+    color: #ffffff;
+}
 
+.card {
+    border-radius: 0;
+    background-color: #ffffff00;
+    border: black;
+}
+
+.card-info {
+    
+    height: 500px;
+    color: #000000;
+    background-color: #ffffff00;
+}
+
+.card-seacrh{
+    background-color: #ffffff00;
+}
+
+.container {
+    
+}
+
+.sensacion_term {
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.temperatura_min{
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.vel-viento{
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+
+.descripcion{
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icono {
+    color: #ffffff;
+}
+
+.temperatura{
+    color: #ffffff;
+}
+.temperatura h1{
+    font-size: 80px;
+}
+
+.ciudad-pais{
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.humedad {
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+form input[name="ciudad"]{
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    border-radius: 0;
+}
+
+.btn-search{
+    background-color: #ffffff00;
+    border: 1px solid;
+}
+.btn-search:focus{
+    background-color: transparent;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0);
+}

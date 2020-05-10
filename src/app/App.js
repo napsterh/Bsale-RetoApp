@@ -65,9 +65,11 @@ class App extends Component {
          e.preventDefault();
         const { ciudad } = e.target.elements;
         const valorCiudad = ciudad.value;
+        const protocolo = location.protocol;
 
         if(valorCiudad){
-            const API_OPENWEATHER =  `http://api.openweathermap.org/data/2.5/weather?q=${valorCiudad}&appid=${OPENWEATHER_KEY}&units=metric`;
+
+            const API_OPENWEATHER =  `${protocolo}//api.openweathermap.org/data/2.5/weather?q=${valorCiudad}&appid=${OPENWEATHER_KEY}&units=metric`;
 
             const response = await fetch(API_OPENWEATHER);
             const data = await response.json();
