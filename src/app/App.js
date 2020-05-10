@@ -18,7 +18,8 @@ class App extends Component {
         vel_viento: 0,
         ciudad: '',
         pais: '',
-        error: null
+        error: null,
+        message: null
     };
 
     climaIcon = {
@@ -71,6 +72,12 @@ class App extends Component {
             const response = await fetch(API_OPENWEATHER);
             const data = await response.json();
 
+            if(data.message === 'city not found'){
+                this.setState({
+                    message: 'Ciudad no encontrada'
+                })
+            }
+
         this.setState({
             temperatura: data.main.temp,
             sensacion_term: data.main.feels_like,
@@ -80,16 +87,16 @@ class App extends Component {
             vel_viento: data.wind.speed,
             ciudad: data.name,
             pais: data.sys.country,
-            error: null
+            error: null,
+            message: null
         });
 
         //config icon
         this.obtener_iconClima(this.climaIcon, data.weather[0].id);
-        console.log("obtener", data);
 
         } else {
             this.setState({
-                error: 'Ingrese una ciudad válida'
+                error: 'Ingrese una ciudad'
             });
         }
      };
@@ -110,6 +117,8 @@ class App extends Component {
                             vel_viento={this.state.vel_viento}
                             ciudad={this.state.ciudad}
                             pais={this.state.pais}
+                            error={this.state.error}
+                            message={this.state.message}
                         />
                     </div>
                 </div>

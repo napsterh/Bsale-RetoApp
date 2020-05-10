@@ -2,7 +2,7 @@ import React  from 'react';
 
 const InfoClima = props => {
 
-    console.log("infoClima",props)
+    console.log("infloClima", props)
 
     return (
 
@@ -11,6 +11,13 @@ const InfoClima = props => {
                 props.error &&
                 <div className="alert alert-danger">
                     <p>{props.error}</p>
+                </div>
+            }
+
+            {
+                props.message &&
+                <div className="alert alert-danger">
+                    <p>{props.message}</p>
                 </div>
             }
 
