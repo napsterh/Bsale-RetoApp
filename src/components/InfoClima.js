@@ -2,7 +2,7 @@ import React  from 'react';
 
 const InfoClima = props => {
 
-    console.log(props)
+    console.log("infoClima",props)
 
     return (
 
@@ -23,7 +23,7 @@ const InfoClima = props => {
                                         <h2><i className="fas fa-temperature-high"></i> {props.sensacion_term}</h2>
                                     </div>
                                     <div className="hora col-4" data-toggle="tooltip" data-placement="top" title="Temperatura mínima">
-                                        <h2><i className="fas fa-arrow-down"></i> {props.temperatura_min}</h2>
+                                        <h2><i className="fas fa-arrow-down fa-1x"></i> {props.temperatura_min}</h2>
                                     </div>
                                 </div>
 
@@ -33,7 +33,13 @@ const InfoClima = props => {
                                     </div>
                                 </div>
 
-                                <div className="row justify-content-md-center" data-toggle="tooltip" data-placement="top" title="Temperatura">
+                                <div className="row justify-content-center animated flash" data-toggle="tooltip" data-placement="top" title="icono">
+                                        <div className="icono">
+                                            <h1><i className={`fas fa-${props.weatherIcon} fa-3x`}></i></h1>
+                                        </div>
+                                </div>
+
+                                <div className="row justify-content-center" data-toggle="tooltip" data-placement="top" title="Temperatura">
                                         <div className="temperatura">
                                             <h1>{props.temperatura} °C</h1>
                                         </div>
